@@ -36,3 +36,28 @@
     transform: rotate(360deg);
   }
 }
+button {
+  font-size: 14px;
+  padding: 6px 12px;
+  margin-left: 5px;
+  border-radius: 4px;
+
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+}
+
+.contenedor {
+  margin-top: 80px;
+}
