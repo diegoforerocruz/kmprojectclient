@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import {
   BarChart,
   Bar,
@@ -14,6 +14,13 @@ import {
 
 const Charts = (props) => {
   console.log(props)
+  let max = 0
+  props.data.map((item)=>{
+    if(parseInt(item.grupos)> max){
+      max = parseInt(item.grupos)
+    }
+  });
+  console.log(`max number ${max}`);
   return (
     <div className="col-6">
     <BarChart
@@ -22,12 +29,13 @@ const Charts = (props) => {
           data={props.data}
           margin={{
             top: 5,
-            
+
             bottom: 5,
           }}
         >
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="name" />
+          <YAxis domain={[0, max]} />
           <Tooltip />
           <Legend verticalAlign="bottom" wrapperStyle={{ lineHeight: '40px' }} />
           <ReferenceLine y={0} stroke="#000" />
