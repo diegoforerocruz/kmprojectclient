@@ -38,6 +38,14 @@ const useSortableData = (items, config = null) => {
 
 const ProductTable = (props) => {
   const { items, requestSort, sortConfig } = useSortableData(props.todos);
+
+  const [searchTermNom, setSearchTermNom] = useState('');
+  const [searchTermFec, setSearchTermFec] = useState('');
+  const [searchTermDep, setSearchTermDep] = useState('');
+  const [searchTermCiu, setSearchTermCiu] = useState('');
+  const [searchTermAG, setSearchTermAG] = useState('');
+  const [searchTermAE, setSearchTermAE] = useState('');
+
   const getClassNamesFor = (name) => {
     if (!sortConfig) {
       return;
@@ -48,42 +56,66 @@ const ProductTable = (props) => {
     <table className="table mt-5 text-center table-bordered">
       <thead>
         <tr>
-          <th>Nombre<br/>
+          <th>
+          <input type="text" placeholder="Filter" onChange={event =>{setSearchTermNom(event.target.value)}}/>
+                <br/>
+                <br/>
+            Nombre<br/>
             <button type="button" onClick={() => requestSort('nombre')} className={getClassNamesFor('nombre')}>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrow-down-up" viewBox="0 0 16 16">
                 <path fillRule="evenodd" d="M11.5 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L11 2.707V14.5a.5.5 0 0 0 .5.5zm-7-14a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L4 13.293V1.5a.5.5 0 0 1 .5-.5z"/>
               </svg>
             </button>
           </th>
-          <th>Fecha Formación<br/>
+          <th>
+          <input type="text" placeholder="Filter" onChange={event =>{setSearchTermFec(event.target.value)}}/>
+                <br/>
+                <br/>
+            Formación<br/>
             <button type="button" onClick={() => requestSort('fecformacion')} className={getClassNamesFor('fecformacion')}>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrow-down-up" viewBox="0 0 16 16">
                 <path fillRule="evenodd" d="M11.5 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L11 2.707V14.5a.5.5 0 0 0 .5.5zm-7-14a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L4 13.293V1.5a.5.5 0 0 1 .5-.5z"/>
               </svg>
             </button>
           </th>
-          <th>Departamento<br/>
+          <th>
+          <input type="text" placeholder="Filter" onChange={event =>{setSearchTermDep(event.target.value)}}/>
+                <br/>
+                <br/>
+            Departamento<br/>
             <button type="button" onClick={() => requestSort('departamento')} className={getClassNamesFor('departamento')}>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrow-down-up" viewBox="0 0 16 16">
                 <path fillRule="evenodd" d="M11.5 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L11 2.707V14.5a.5.5 0 0 0 .5.5zm-7-14a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L4 13.293V1.5a.5.5 0 0 1 .5-.5z"/>
               </svg>
             </button>
           </th>
-          <th>Ciudad<br/>
+          <th>
+          <input type="text" placeholder="Filter" onChange={event =>{setSearchTermCiu(event.target.value)}}/>
+                <br/>
+                <br/>
+            Ciudad<br/>
             <button type="button" onClick={() => requestSort('ciudad')} className={getClassNamesFor('ciudad')}>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrow-down-up" viewBox="0 0 16 16">
                 <path fillRule="evenodd" d="M11.5 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L11 2.707V14.5a.5.5 0 0 0 .5.5zm-7-14a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L4 13.293V1.5a.5.5 0 0 1 .5-.5z"/>
               </svg>
             </button>
           </th>
-          <th>Area General<br/>
+          <th>
+          <input type="text" placeholder="Filter" onChange={event =>{setSearchTermAG(event.target.value)}}/>
+                <br/>
+                <br/>
+            Area General<br/>
             <button type="button" onClick={() => requestSort('acgeneral')} className={getClassNamesFor('acgeneral')}>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrow-down-up" viewBox="0 0 16 16">
                 <path fillRule="evenodd" d="M11.5 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L11 2.707V14.5a.5.5 0 0 0 .5.5zm-7-14a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L4 13.293V1.5a.5.5 0 0 1 .5-.5z"/>
               </svg>
             </button>
           </th>
-          <th>Area Especifica<br/>
+          <th>
+          <input type="text" placeholder="Filter" onChange={event =>{setSearchTermAE(event.target.value)}}/>
+                <br/>
+                <br/>
+            Area Especifica<br/>
             <button type="button" onClick={() => requestSort('acespecifico')} className={getClassNamesFor('acespecifico')}>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrow-down-up" viewBox="0 0 16 16">
                 <path fillRule="evenodd" d="M11.5 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L11 2.707V14.5a.5.5 0 0 0 .5.5zm-7-14a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L4 13.293V1.5a.5.5 0 0 1 .5-.5z"/>
@@ -114,7 +146,17 @@ const ProductTable = (props) => {
         </tr>
       </thead>
       <tbody>
-        {items.map((item) => (
+        {items.filter((val)=>{
+              if(searchTermNom== '' && searchTermFec== '' && searchTermDep== '' && searchTermCiu== '' && searchTermAG== '' && searchTermAE== ''){
+                return val;
+              }else{
+                if ( val.nombre.toLowerCase().includes(searchTermNom.toLowerCase()) && val.fecformacion.toLowerCase().includes(searchTermFec.toLowerCase()) &&
+                val.departamento.toLowerCase().includes(searchTermDep.toLowerCase()) && val.ciudad.toLowerCase().includes(searchTermCiu.toLowerCase()) &&
+                val.acgeneral.toLowerCase().includes(searchTermAG.toLowerCase()) && val.acespecifico.toLowerCase().includes(searchTermAE.toLowerCase()) ){
+                  return val;        
+                } 
+              } 
+            }).map((item) => (
           <tr key={item.id}>
             <td>{item.nombre}</td>
             <td>{item.fecformacion}</td>
