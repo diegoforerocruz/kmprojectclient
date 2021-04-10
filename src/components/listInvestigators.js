@@ -128,7 +128,7 @@ const useSortableData = (items, config = null) => {
           </thead>
           <tbody>
             {items.filter((val)=>{
-              if(searchTermSexo == '' && searchTermNac== '' && searchTermNom== ''){
+              if(searchTermSexo === '' && searchTermNac=== '' && searchTermNom=== ''){
                 return val;
               }else{
                 if (val.sexo.toLowerCase().includes(searchTermSexo.toLowerCase()) && val.nacionalidad.toLowerCase().includes(searchTermNac.toLowerCase()) && val.nombre.toLowerCase().includes(searchTermNom.toLowerCase())){
