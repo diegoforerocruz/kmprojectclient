@@ -33,7 +33,7 @@ export const Home = ({ title }) => {
             <ul>
               <li>Grupos de investigación</li>
               <ul>
-                <li>Vizualización de Lista de Grupos de Investigación</li>
+                <li>Visualización de Lista de Grupos de Investigación</li>
                 <ul>
                   <li>Ordenar de forma ascendente y descendente la información de la tabla por varios criterios</li>
                   <li>Realizar busquedas dentro de la tabla por uno o más criterios</li>
@@ -47,7 +47,7 @@ export const Home = ({ title }) => {
               </ul>
               <li>Investigadores</li>
               <ul>
-                <li>Vizualización de Lista Investigadores</li>
+                <li>Visualización de Lista Investigadores</li>
                 <ul>
                   <li>Ordenar de forma ascendente y descendente la información de la tabla por varios criterios</li>
                   <li>Realizar busquedas dentro de la tabla por uno o más criterios</li>
