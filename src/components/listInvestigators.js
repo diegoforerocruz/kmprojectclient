@@ -54,7 +54,7 @@ const useSortableData = (items, config = null) => {
     };
     const getAreasInvestigador = async (id) => {
       try {
-        const response = await fetch(`http://127.0.0.1:5000/fullinfoinvestigador/${id}`);
+        const response = await fetch(`http://35.199.104.212:5000/fullinfoinvestigador/${id}`);
         const jsonData = await response.json();
         await setNombreInvestigadorDetail(jsonData[0].nombre);
         await setDatosAreasActuacion(jsonData);
@@ -147,9 +147,7 @@ const useSortableData = (items, config = null) => {
             ))}
           </tbody>
         </table>
-        <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-          Launch demo modal
-        </button>
+        
         <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div className="modal-dialog">
             <div className="modal-content">
@@ -180,7 +178,7 @@ const ListInvestigators = () => {
     const [todos, setTodos] = useState([]);
   const getTodos = async () => {
     try {
-      const response = await fetch("http://127.0.0.1:5000/investigadores");
+      const response = await fetch("http://35.199.104.212:5000/investigadores");
       const jsonData = await response.json();
       setTodos(jsonData);
     } catch (err) {

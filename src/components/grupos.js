@@ -9,7 +9,7 @@ export const Grupos = ({ title }) => {
   const [infoAmbas, setInfoAmbas] = useState([]);
   const getInfoGen = async () => {
     try {
-      const response = await fetch("http://127.0.0.1:5000/tematicasgeneralesvsgrupos");
+      const response = await fetch("http://35.199.104.212:5000/tematicasgeneralesvsgrupos");
       const jsonData = await response.json();
       setInfoGen(jsonData);
     } catch (err) {
@@ -18,7 +18,7 @@ export const Grupos = ({ title }) => {
   };
   const getInfoEsp = async () => {
     try {
-      const response = await fetch("http://127.0.0.1:5000/tematicasespecificosvsgrupos");
+      const response = await fetch("http://35.199.104.212:5000/tematicasespecificosvsgrupos");
       const jsonData = await response.json();
       setInfoEsp(jsonData);
     } catch (err) {
@@ -27,7 +27,7 @@ export const Grupos = ({ title }) => {
   };
   const getInfoAmbas = async () => {
     try {
-      const response = await fetch("http://127.0.0.1:5000/ambastematicasvsgrupos");
+      const response = await fetch("http://35.199.104.212:5000/ambastematicasvsgrupos");
       const jsonData = await response.json();
       setInfoAmbas(jsonData);
     } catch (err) {
@@ -64,7 +64,6 @@ export const Grupos = ({ title }) => {
               </h4>
               <div id="collapseOne" className="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                 <div className="accordion-body">
-                  <strong>This is the first item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
                   <div className="row d-flex justify-content-center">
                     <Charts data={infoGen} />
                   </div>
@@ -79,7 +78,6 @@ export const Grupos = ({ title }) => {
               </h4>
               <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                 <div className="accordion-body">
-                  <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
                   <div className="row d-flex justify-content-center">
                     <Charts data={infoEsp} />
                   </div>
@@ -94,7 +92,6 @@ export const Grupos = ({ title }) => {
               </h4>
               <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                 <div className="accordion-body">
-                  <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
                   <div className="row d-flex justify-content-center">
                     <Charts data={infoAmbas} />
                   </div>

@@ -194,7 +194,7 @@ const ListInvGroups = () => {
   const [todos, setTodos] = useState([]);
   const getTodos = async () => {
     try {
-      const response = await fetch("http://127.0.0.1:5000/fullinfogrupos");
+      const response = await fetch("http://35.199.104.212:5000/fullinfogrupos");
       const jsonData = await response.json();
       setTodos(jsonData);
     } catch (err) {
