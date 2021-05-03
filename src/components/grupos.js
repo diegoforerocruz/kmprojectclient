@@ -1,12 +1,15 @@
 import React, {useEffect, useState} from "react";
 import ListInvGroups from '../components/listInvGroups';
 import Charts from '../components/charts';
+import Grafito from '../components/grafito';
 
 
 export const Grupos = ({ title }) => {
   const [infoGen, setInfoGen] = useState([]);
   const [infoEsp, setInfoEsp] = useState([]);
   const [infoAmbas, setInfoAmbas] = useState([]);
+  const [infoGrafo, setInfoGrafo] = useState([]);
+  
   const getInfoGen = async () => {
     try {
       const response = await fetch("http://35.199.104.212:5000/tematicasgeneralesvsgrupos");
@@ -34,12 +37,27 @@ export const Grupos = ({ title }) => {
       console.error(err.message);
     }
   };
+  const getInfoGrafo = async () => {
+    try {
+      const response = await fetch("http://127.0.0.1:5000/datosGrafo");
+      const jsonData = await response.json();
+      setInfoGrafo(jsonData);
+    } catch (err) {
+      console.error(err.message);
+    }
+  };
+
+  
   
   useEffect(() => {
     getInfoGen();
     getInfoEsp();
     getInfoAmbas();
-  }, []);
+    getInfoGrafo();
+  },[]);
+
+  
+
   return (
     <div className="contenedor">
       
@@ -50,6 +68,10 @@ export const Grupos = ({ title }) => {
         <li className="nav-item" role="presentation">
           <button className="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Gráficas de Desarrollo de Áreas</button>
         </li>
+        <li className="nav-item" role="presentation">
+          <button className="nav-link" id="grafito-tab" data-bs-toggle="tab" data-bs-target="#grafito" type="button" role="tab" aria-controls="grafito" aria-selected="false">Grafo</button>
+        </li>
+        
       </ul>
       <div className="tab-content" id="myTabContent">
         <div className="tab-pane fade show active " id="home" role="tabpanel" aria-labelledby="home-tab"><ListInvGroups/></div>
@@ -100,6 +122,7 @@ export const Grupos = ({ title }) => {
             </div>
           </div>
         </div>
+        <div className="tab-pane fade" id="grafito" role="tabpanel" aria-labelledby="grafito-tab" style={{height:"500px"}}><Grafito data={infoGrafo}/></div>
       </div>
 
       

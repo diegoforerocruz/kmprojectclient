@@ -3,6 +3,7 @@ import ListInvestigators from '../components/listInvestigators';
 import Charts from '../components/charts';
 
 
+
 export const Investigadores = ({ title }) => {
   const [infoAreas, setInfoAreas] = useState([]);
   const getInfoAreas = async () => {
@@ -27,6 +28,7 @@ export const Investigadores = ({ title }) => {
         <li className="nav-item" role="presentation">
           <button className="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Gráfica de Desarrollo de Áreas</button>
         </li>
+        
       </ul>
       <div className="tab-content" id="myTabContent">
         <div className="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"><ListInvestigators/></div>
@@ -51,6 +53,7 @@ export const Investigadores = ({ title }) => {
             
           </div>
         </div>
+        
       </div>
     </div>
   );

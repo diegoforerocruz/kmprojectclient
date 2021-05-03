@@ -13,14 +13,14 @@ import {
 } from 'recharts';
 
 const Charts = (props) => {
-  console.log(props)
+  //console.log(props)
   let max = 0
   props.data.map((item)=>{
     if(parseInt(item.grupos)> max){
       max = parseInt(item.grupos)
     }
   });
-  console.log(`max number ${max}`);
+  //console.log(`max number ${max}`);
   return (
     <div className="col-6">
     <BarChart
