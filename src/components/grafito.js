@@ -66,56 +66,6 @@ const myConfig = {
 
 // Callback to handle click on the graph.
 // @param {Object} event click dom event
-const onClickGraph = function(event) {
-   window.alert('Clicked the graph background');
-};
-
-const onClickNode = function(nodeId, node) {
-   window.alert('Clicked node ${nodeId} in position (${node.x}, ${node.y})');
-};
-
-const onDoubleClickNode = function(nodeId, node) {
-   window.alert('Double clicked node ${nodeId} in position (${node.x}, ${node.y})');
-};
-
-const onRightClickNode = function(event, nodeId, node) {
-   window.alert('Right clicked node ${nodeId} in position (${node.x}, ${node.y})');
-};
-
-const onMouseOverNode = function(nodeId, node) {
-   window.alert(`Mouse over node ${nodeId} in position (${node.x}, ${node.y})`);
-};
-
-const onMouseOutNode = function(nodeId, node) {
-   window.alert(`Mouse out node ${nodeId} in position (${node.x}, ${node.y})`);
-};
-
-const onClickLink = function(source, target) {
-   window.alert(`Clicked link between ${source} and ${target}`);
-};
-
-const onRightClickLink = function(event, source, target) {
-   window.alert('Right clicked link between ${source} and ${target}');
-};
-
-const onMouseOverLink = function(source, target) {
-   window.alert(`Mouse over in link between ${source} and ${target}`);
-};
-
-const onMouseOutLink = function(source, target) {
-   window.alert(`Mouse out link between ${source} and ${target}`);
-};
-
-const onNodePositionChange = function(nodeId, x, y) {
-   window.alert(`Node ${nodeId} moved to new position x= ${x} y= ${y}`);
-};
-
-// Callback that's called whenever the graph is zoomed in/out
-// @param {number} previousZoom the previous graph zoom
-// @param {number} newZoom the new graph zoom
-const onZoomChange = function(previousZoom, newZoom) {
-   window.alert(`Graph is now zoomed at ${newZoom} from ${previousZoom}`);
-};
 
   return (
     <div>

@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 
-
+var ip='192.168.0.6'
 
 const useSortableData = (items, config = null) => {
     const [sortConfig, setSortConfig] = React.useState(config);
@@ -54,7 +54,7 @@ const useSortableData = (items, config = null) => {
     };
     const getAreasInvestigador = async (id) => {
       try {
-        const response = await fetch(`http://35.199.104.212:5000/fullinfoinvestigador/${id}`);
+        const response = await fetch(`http://${ip}:5000/fullinfoinvestigador/${id}`);
         const jsonData = await response.json();
         await setNombreInvestigadorDetail(jsonData[0].nombre);
         await setDatosAreasActuacion(jsonData);
@@ -178,7 +178,7 @@ const ListInvestigators = () => {
     const [todos, setTodos] = useState([]);
   const getTodos = async () => {
     try {
-      const response = await fetch("http://35.199.104.212:5000/investigadores");
+      const response = await fetch("http://"+ip+":5000/investigadores");
       const jsonData = await response.json();
       setTodos(jsonData);
     } catch (err) {

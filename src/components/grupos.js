@@ -3,6 +3,7 @@ import ListInvGroups from '../components/listInvGroups';
 import Charts from '../components/charts';
 import Grafito from '../components/grafito';
 
+var ip='192.168.0.6'
 
 export const Grupos = ({ title }) => {
   const [infoGen, setInfoGen] = useState([]);
@@ -12,7 +13,7 @@ export const Grupos = ({ title }) => {
   
   const getInfoGen = async () => {
     try {
-      const response = await fetch("http://35.199.104.212:5000/tematicasgeneralesvsgrupos");
+      const response = await fetch("http://"+ip+":5000/tematicasgeneralesvsgrupos");
       const jsonData = await response.json();
       setInfoGen(jsonData);
     } catch (err) {
@@ -21,7 +22,7 @@ export const Grupos = ({ title }) => {
   };
   const getInfoEsp = async () => {
     try {
-      const response = await fetch("http://35.199.104.212:5000/tematicasespecificosvsgrupos");
+      const response = await fetch("http://"+ip+":5000/tematicasespecificosvsgrupos");
       const jsonData = await response.json();
       setInfoEsp(jsonData);
     } catch (err) {
@@ -30,7 +31,7 @@ export const Grupos = ({ title }) => {
   };
   const getInfoAmbas = async () => {
     try {
-      const response = await fetch("http://35.199.104.212:5000/ambastematicasvsgrupos");
+      const response = await fetch("http://"+ip+":5000/ambastematicasvsgrupos");
       const jsonData = await response.json();
       setInfoAmbas(jsonData);
     } catch (err) {
@@ -39,7 +40,7 @@ export const Grupos = ({ title }) => {
   };
   const getInfoGrafo = async () => {
     try {
-      const response = await fetch("http://127.0.0.1:5000/datosGrafo");
+      const response = await fetch("http://"+ip+":5000/datosGrafo");
       const jsonData = await response.json();
       setInfoGrafo(jsonData);
     } catch (err) {

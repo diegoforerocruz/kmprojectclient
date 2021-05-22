@@ -3,12 +3,12 @@ import ListInvestigators from '../components/listInvestigators';
 import Charts from '../components/charts';
 
 
-
+var ip='192.168.0.6'
 export const Investigadores = ({ title }) => {
   const [infoAreas, setInfoAreas] = useState([]);
   const getInfoAreas = async () => {
     try {
-      const response = await fetch("http://35.199.104.212:5000/areasdesarrolladasporinvestigador");
+      const response = await fetch("http://"+ip+":5000/areasdesarrolladasporinvestigador");
       const jsonData = await response.json();
       setInfoAreas(jsonData);
     } catch (err) {

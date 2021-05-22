@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import '../App.css';
 
+var ip='192.168.0.6'
 const useSortableData = (items, config = null) => {
   const [sortConfig, setSortConfig] = React.useState(config);
 
@@ -194,7 +195,7 @@ const ListInvGroups = () => {
   const [todos, setTodos] = useState([]);
   const getTodos = async () => {
     try {
-      const response = await fetch("http://35.199.104.212:5000/fullinfogrupos");
+      const response = await fetch("http://"+ip+":5000/fullinfogrupos");
       const jsonData = await response.json();
       setTodos(jsonData);
     } catch (err) {
